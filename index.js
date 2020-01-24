@@ -152,7 +152,7 @@ class Instructor extends Lambdasian {
   constructor(options){
 
     super(options);
-    this.speciality = options.speciality;
+    this.specialty = options.specialty;
     this.favLanguage = options.favLanguage;
     this.catchPhrase = options.catchPhrase;
     //this.name = name;
@@ -190,6 +190,7 @@ class Student extends Lambdasian {
     this.previousBackground = options.previousBackground;
     this.className = options.className;
     this.favSubjects = options.favSubjects;
+    this.grade = options.grade
 
   }
 
@@ -203,9 +204,15 @@ class Student extends Lambdasian {
   sprintChallenge(subject){
     return `${this.name}has begun sprint challenge on ${subject}`
   }
+  graduate(){
+    if (this.grade > 70){
+      return `Yay, You can graduate`
+    }else {
+      return `Go back to their grading assigments to increase their score`
+    }
 
  
-  
+  }
 
 }
 
@@ -228,8 +235,8 @@ class ProjectManager extends Instructor {
   constructor(options){
       super(options);
       this.gradClassName = options.gradClassName;
-      this.favoriteInstructor = options.favoriteInstructor;
-     
+      this.favInstructor = options.favInstructor;
+      const name = '';
   }
   standUp(channel){
       return `${this.name} announces to ${channel}, @channel standy times!`
